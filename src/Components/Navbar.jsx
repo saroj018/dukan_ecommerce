@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { AiOutlineMenu, AiOutlineHeart, AiOutlineShoppingCart, AiOutlineUser, AiOutlineSearch } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+import { newContext } from '../context/ResponsiveData';
+import MenuBar from './MenuBar';
 
 const Navbar = () => {
+
+  const { setMenuBar } = useContext(newContext)
   return (
-    <div className=' shadow-md shadow-gray-500 py-3'>
+    <>
+    
+      <MenuBar/>
+    
+    <div className=' shadow-md shadow-gray-500 py-3 mb-5'>
       <nav className='flex justify-between items-center p-4 lg:px-6  text-2xl md:text-3xl lg:text-4xl '>
-        <AiOutlineMenu className='md:hidden' />
-        <img className='h-[30px]' src="https://www.logolynx.com/images/logolynx/56/56afea50b83164e3e272d4ebeccd94fb.png" alt="" />
+        <AiOutlineMenu onClick={() => setMenuBar(true)} className='md:hidden cursor-pointer' />
+        <Link to={'/'}><img className='h-[30px]' src="https://www.logolynx.com/images/logolynx/56/56afea50b83164e3e272d4ebeccd94fb.png" alt="" /></Link>
         <div className=' relative hidden md:block'>
           <input className='border-2  border-gray-500 text-xl rounded-sm  p-1 w-[55vw]  lg:w-[62vw] outline-none inline-block' type="text" placeholder='Search entire store here....' />
           <AiOutlineSearch className='bg-red-500 absolute left-[100%]  cursor-pointer lg:top-[7px]  top-[2px] text-white text-[40px]' />
@@ -37,6 +46,7 @@ const Navbar = () => {
         </ul>
       </nav>
     </div>
+    </>
   )
 }
 

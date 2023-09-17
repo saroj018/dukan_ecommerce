@@ -5,9 +5,12 @@ const ResponsiveData = ({children}) => {
     
 
     const[newResponsive,setResponsive]=useState(null)
+    const[cutCross,setCutCross]=useState(true)
+    const[menuBar,setMenuBar]=useState(false)
+
 
   return (
-    <newContext.Provider value={{newResponsive,setResponsive}}>
+    <newContext.Provider value={{newResponsive,setResponsive,cutCross,setCutCross,menuBar,setMenuBar}}>
         {children}
     </newContext.Provider>
   )

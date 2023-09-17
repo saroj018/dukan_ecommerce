@@ -5,6 +5,8 @@ import ResponsiveData from './context/ResponsiveData'
 import ProductDetials from './pages/ProductDetials'
 import Navbar from './Components/Navbar'
 import { Route, Routes } from 'react-router-dom'
+import ProductGallery from './Components/ProductGallery'
+import FilterSection from './Components/FilterSection'
 
 const App = () => {
   return (
@@ -14,6 +16,8 @@ const App = () => {
         <Routes>
           <Route path='/productdetail' element={<ProductDetials/>}/>
           <Route path='/' element={<Home/>}/>
+          <Route path='/productgallery' element={<ProductGallery/>}/>
+          <Route path='/filtersection' element={<FilterSection/>}/>
         </Routes>
         <Footer />
       </ResponsiveData>

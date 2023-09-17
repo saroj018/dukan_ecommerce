@@ -6,8 +6,9 @@ import { FaFacebook } from 'react-icons/fa'
 const Footer = () => {
     return (
         <div >
-            <footer >
-                <div className='md:flex md:gap-8 justify-around items-start'>
+            <footer className='mt-10' >
+                <hr />
+                <div className='md:flex md:gap-8 justify-around mt-3 items-start'>
                     <section className='ml-6 mr-2 md:w-[280px]'>
                         <p className='text-2xl mb-3 '>About Us</p>
                         <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, perspiciatis culpa! Amet tempore pariatur, maxime voluptatibus porro tenetur inventore distinctio hic consequatur quaerat totam tempora itaque molestiae aliquam sunt est eveniet! Consequuntur ea assumenda minus ex aperiam excepturi et repellat officia ad, facilis, deserunt repudiandae omnis! Corporis explicabo cupiditate ea.</p>
