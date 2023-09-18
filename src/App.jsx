@@ -1,12 +1,14 @@
 import React from 'react'
 import Home from './pages/Home'
-import Footer from './Components/Footer'
+import Footer from './Components/bar/Footer'
 import ResponsiveData from './context/ResponsiveData'
-import ProductDetials from './pages/ProductDetials'
-import Navbar from './Components/Navbar'
+import ProductDetialPage from './pages/ProductDetialPage'
+import Navbar from './Components/bar/Navbar'
 import { Route, Routes } from 'react-router-dom'
-import ProductGallery from './Components/ProductGallery'
-import FilterSection from './Components/FilterSection'
+import ProductGallery from './Components/product/ProductGallery'
+import FilterSection from './Components/filter/FilterSection'
+import CartPage from './pages/CartPage'
+import WishListPage from './pages/WishListPage'
 
 const App = () => {
   return (
@@ -14,10 +16,12 @@ const App = () => {
       <ResponsiveData>
         <Navbar/>
         <Routes>
-          <Route path='/productdetail' element={<ProductDetials/>}/>
+          <Route path='productgallery/detail/:id' element={<ProductDetialPage/>}/>
           <Route path='/' element={<Home/>}/>
           <Route path='/productgallery' element={<ProductGallery/>}/>
           <Route path='/filtersection' element={<FilterSection/>}/>
+          <Route path='/cartlist' element={<CartPage/>}/>
+          <Route path='/wishlist' element={<WishListPage/>}/>
         </Routes>
         <Footer />
       </ResponsiveData>

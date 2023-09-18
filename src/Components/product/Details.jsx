@@ -1,19 +1,26 @@
 import React from 'react'
-import { AiOutlineHeart, AiOutlineTwitter, AiFillYoutube } from 'react-icons/ai'
-import { FaFacebook } from 'react-icons/fa'
+import {AiOutlineHeart} from 'react-icons/ai'
+import {FaFacebook} from 'react-icons/fa'
+import {AiFillYoutube} from 'react-icons/ai'
+import {AiOutlineTwitter} from 'react-icons/ai'
+import { useDispatch } from 'react-redux'
+import { addtocart } from '../../redux/slicer/cartSlice'
 
-const ProductDetials = () => {
-    return (
+const Details = ({itemPrice,itemImage,itemTitle}) => {
+
+    const dispatch=useDispatch()
+  return (
+    <div>
         <div className='mt-10 md:pl-6'>
             <div className='md:flex md:items-center'>
                 <div className='flex justify-center items-center'>
-                    <img className='md:w-[600px]' src="https://th.bing.com/th/id/R.b0dd389bc010f9b524c10f4e977bc282?rik=2bXFXchqkwhysA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2flaptop-png-laptop-notebook-png-image-image-6746-1153.png&ehk=6byFAarnH09NpQkcILADyXHoQI1AG%2bVFwkFkGcmpSnQ%3d&risl=&pid=ImgRaw&r=0" alt="" />
+                    <img className='md:w-[600px]' src={itemImage} alt="" />
 
                 </div>
                 <div className='ml-4 mt-5 md:w-[40%] md:ml-24' >
-                    <p className=' text-xl font-medium'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas debitis et necessitatibus, maxime consequuntur laborum?</p>
+                    <p className=' text-xl font-medium'>{itemTitle}</p>
                     <p className='my-2'>Write a Review</p>
-                    <p className='text-2xl text-green-500'>Rs 25000</p>
+                    <p className='text-2xl text-green-500'>{`Rs ${itemPrice}`}</p>
                     <p className='my-3 md:text-lg'>Price is inclusive of VAT.</p>
                     <AiOutlineHeart className='text-4xl cursor-pointer my-5' />
 
@@ -25,7 +32,7 @@ const ProductDetials = () => {
                             <p className='cursor-pointer'>-</p>
                         </div>
                         <div className='bg-red-500 cursor-pointer text-white flex justify-center font-semibold items-center px-3 w-[35%] rounded-sm h-[51px]'>
-                            <p >Add to Cart</p>
+                            <p onClick={()=>dispatch(addtocart({itemImage,itemPrice,itemTitle}))}>Add to Cart</p>
                         </div>
                     </section>
 
@@ -57,12 +64,13 @@ const ProductDetials = () => {
                     <p>-</p>
                 </div>
                 <div className='bg-red-500 text-white flex justify-center items-center px-3 w-[50%] rounded-sm h-[51px]'>
-                    <p>Add to Cart</p>
+                    <p onClick={()=>dispatch(addtocart({itemImage,itemPrice,itemTitle}))}>Add to Cart</p>
                 </div>
             </section>
 
         </div>
-    )
+    </div>
+  )
 }
 
-export default ProductDetials
+export default Details

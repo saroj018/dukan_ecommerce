@@ -93,6 +93,7 @@ const Footer = () => {
                     <p className='text-white text-xl text-center py-4'>Copyright @ 2023.All Right Reserve</p>
                 </div>
             </footer>
+
         </div>
     )
 }

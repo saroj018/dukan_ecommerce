@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { newContext } from '../context/ResponsiveData'
+import { newContext } from '../../context/ResponsiveData'
 
 const FilterBar = () => {
     const{setCutCross}=useContext(newContext)
@@ -13,7 +13,7 @@ const FilterBar = () => {
 
         <div>
             <select name="" id="" className='px-4 py-2 rounded-sm border-2 border-green-500 outline-none'>
-                <option disabled selected>Sort By</option>
+                <option disabled selected>Sort By Price</option>
                 <option value="">Low to High</option>
                 <option value="">High to Low</option>
             </select>

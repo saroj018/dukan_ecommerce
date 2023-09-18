@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import ProductCard from './ProductCard';
-import { newContext } from '../context/ResponsiveData';
+import ProductCard from '../product/ProductCard';
+import { newContext } from '../../context/ResponsiveData';
 
 const SliderProduct = () => {
     const responsiveValue = {

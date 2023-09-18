@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import ProductCard from '../Components/ProductCard';
-import Topbar from '../Components/Topbar'
-import Categories from '../Components/Categories';
-import SliderProduct from '../Components/SliderProduct';
+import ProductCard from '../Components/product/ProductCard';
+import Topbar from '../Components/bar/Topbar'
+import Categories from '../Components/product/Categories';
+import SliderProduct from '../Components/product/SliderProduct';
 import { newContext } from '../context/ResponsiveData';
 
 
