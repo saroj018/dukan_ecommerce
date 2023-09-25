@@ -14,14 +14,7 @@ const CartPage = () => {
                 <div>
                     <h1 className='text-center text-3xl font-semibold my-6'>Shopping Cart List</h1>
                 </div>
-                {
-                    cartList && cartList.map((ele, index) => {
-                        return (
-                            <CartItem key={index} itemImage={ele.itemImage} itemPrice={ele.itemPrice} itemName={ele.itemTitle} />
-                            
-                        )
-                    })
-                }
+                <CartItem cartList={cartList}/>
                 <Link className='flex justify-center' to={'/'}><p className='border-2  flex justify-center border-gray-500 px-3 cursor-pointer text-xl py-2 w-fit  bg-blue-500 text-white outline-none rounded-sm '>Continue Shopping</p></Link>
             </div>
             <Checkout/>

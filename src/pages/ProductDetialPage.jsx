@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Details from '../Components/product/Details'
+import useFetch from './hooks/useFetch'
 
 const ProductDetials = () => {
 
@@ -8,14 +9,14 @@ const ProductDetials = () => {
     const { id } = useParams()
     console.log(id);
 
-    const apiProductDetails = async () => {
-        const resp = await fetch(`https://dummyjson.com/product/${id}`)
-        const data = await resp.json()
-        setDetails(data)
-    }
-    console.log(details);
+    const fetchURL=`https://dummyjson.com/product/${id}`
 
     useEffect(() => {
+        const apiProductDetails=async()=>{
+            const data=await useFetch(fetchURL)
+            setDetails(data)
+        }
+
         apiProductDetails()
     }, [])
 

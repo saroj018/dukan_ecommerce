@@ -17,25 +17,25 @@ const Footer = () => {
                     <section className='my-12 md:my-0 ml-6 mr-2'>
                         <p className='text-2xl mb-3'>Quick Pages</p>
                         <div className='flex gap-20'>
-                            <ul className='list-none'>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
+                            <ul className='list-none text-red-800'>
+                                <li>Home</li>
+                                <li>Smartphones</li>
+                                <li>Furnitures</li>
+                                <li>Motercycle</li>
+                                <li>Lighting</li>
+                                <li>Mens-Shirts</li>
+                                <li>Tops</li>
+                                <li>Home-Decoration</li>
                             </ul>
-                            <ul className='list-none'>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
-                                <li>Demo Data</li>
+                            <ul className='list-none text-red-800'>
+                                <li>Laptops</li>
+                                <li>Womens-Dresses</li>
+                                <li>Sunglasses</li>
+                                <li>Automotive</li>
+                                <li>Womens-Bag</li>
+                                <li>Skincare</li>
+                                <li>Groceries</li>
+                                <li>Fragrance</li>
                             </ul>
                         </div>
                     </section>

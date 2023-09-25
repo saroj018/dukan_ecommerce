@@ -10,7 +10,7 @@ const FilterSection = () => {
         <>
             {
                 cutCross &&
-                <div className='fixed md:static h-screen md:h-fit md:mt-5 z-10 top-0 overflow-scroll md:overflow-hidden  w-screen md:w-[100%] bg-white py-2 '>
+                <div className='fixed md:static h-screen md:h-fit md:mt-5 z-10 top-0 overflow-scroll md:overflow-hidden  w-screen md:w-[80%] bg-white py-2 '>
                     <div className='flex justify-between px-4 my-2'>
                         <p className='md:ml-6 md:text-red-500 md:font-semibold md:text-xl'>Filter</p>
                         <Link to={'/productgallery'}><RxCross2 className='md:hidden' onClick={() => setCutCross(false)} /></Link>

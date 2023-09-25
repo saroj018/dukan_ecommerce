@@ -9,6 +9,7 @@ import ProductGallery from './Components/product/ProductGallery'
 import FilterSection from './Components/filter/FilterSection'
 import CartPage from './pages/CartPage'
 import WishListPage from './pages/WishListPage'
+import Category from './pages/Category'
 
 const App = () => {
   return (
@@ -22,6 +23,9 @@ const App = () => {
           <Route path='/filtersection' element={<FilterSection/>}/>
           <Route path='/cartlist' element={<CartPage/>}/>
           <Route path='/wishlist' element={<WishListPage/>}/>
+          <Route path='/category/:category' element={<Category/>}/>
+          <Route path='/:category' element={<Category/>}/>
+          {/* <Route path='/blogs' element={<Blogs/>}/> */}
         </Routes>
         <Footer />
       </ResponsiveData>

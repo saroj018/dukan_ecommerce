@@ -1,0 +1,37 @@
+export const expertPick=[
+    {
+        params:'womens-jewellery',
+        image:'https://th.bing.com/th/id/R.bf9e6db8a41975a345b4c1ef50e562ad?rik=aXZL%2b0IeWoNsMg&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fjewelry-transparent-background%2fjewelry-transparent-background-5.png&ehk=ECJ2gy0bnpOVSGhygMUmzdqyfvcrD5%2bbF4SdLNI7Ho4%3d&risl=&pid=ImgRaw&r=0',
+        category:'Jewellery'
+    },
+    {
+        params:'sunglasses',
+        image:'https://th.bing.com/th/id/R.e9cb40818980ea190b417f51cb9de32f?rik=hDJvk1HKeek7wg&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fsunglasses-png-transparent%2fsunglasses-png-transparent-14.png&ehk=EMcOrNRF0xIoLApP1p2LLSslsgkZ05WV%2b8tm0gd63s8%3d&risl=&pid=ImgRaw&r=0',
+        category:'Sunglasses'
+    },
+    {
+        params:'mens-watches',
+        image:'https://pngimg.com/uploads/watches/watches_PNG101437.png',
+        category:'Watch'
+    },
+    {
+        params:'motorcycle',
+        image:'https://th.bing.com/th/id/R.b45abbe65628faf5ce6d709526ececf5?rik=1%2fvCEPMuEnOdEg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fmotorbike-hd-png--1204.png&ehk=r39XPtcEQ%2b2cST2Ad2xJ1h2bnFlAcQiKFpuFdK1TnEo%3d&risl=&pid=ImgRaw&r=0',
+        category:'Motercycle'
+    },
+    {
+        params:'skincare',
+        image:'https://th.bing.com/th/id/R.4bcfb827221085d617bb202cce100ee6?rik=G8ev1894kkMJ6g&pid=ImgRaw&r=0',
+        category:'Skincare'
+    },
+    {
+        params:'mens-shirts',
+        image:'https://purepng.com/public/uploads/large/purepng.com-slim-fit-mens-full-shirtsbutton-front-shirtgarmentdressshirtfullslim-fit-1421526306937vseuy.png',
+        category:'Shirt'
+    },
+    {
+        params:'womens-dresses',
+        image:'https://th.bing.com/th/id/R.65dec9a5dac15c08a1cf92f9355e2f67?rik=PDqdZT6vj09jkQ&pid=ImgRaw&r=0',
+        category:'Dresses'
+    },
+]

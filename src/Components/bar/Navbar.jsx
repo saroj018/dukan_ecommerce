@@ -31,7 +31,7 @@ const Navbar = () => {
 
       <MenuBar />
 
-      <div className='  shadow-md z-0 shadow-gray-500 py-3 mb-5'>
+      <div className=' w-screen shadow-md z-0 shadow-gray-500 py-3 mb-5'>
         <nav className='flex justify-between items-center p-4 lg:px-6  text-2xl md:text-3xl lg:text-4xl '>
           <AiOutlineMenu onClick={() => setMenuBar(true)} className='md:hidden cursor-pointer' />
           <Link to={'/'}><img className='h-[30px]' src="https://www.logolynx.com/images/logolynx/56/56afea50b83164e3e272d4ebeccd94fb.png" alt="" /></Link>
@@ -68,14 +68,14 @@ const Navbar = () => {
 
         <nav className=' justify-center items-center px-3 bg-red-500 text-white py-2 my-4 hidden lg:block '>
           <ul className='uppercase font-semibold flex gap-12 justify-center items-center'>
-            <li>laptops</li>
-            <li>smartphones</li>
-            <li>monitors</li>
-            <li>grocery</li>
-            <li>beauty</li>
-            <li>decoration</li>
-            <li>accessories</li>
-            <li>blogs</li>
+            <Link to={'/category/laptops'}><li>laptops</li></Link>
+            <Link to={'/category/smartphones'}><li>smartphones</li></Link>
+            <Link to={'/category/lighting'}><li>lighting</li></Link>
+            <Link to={'/category/groceries'}><li>grocery</li></Link>
+            <Link to={'/category/skincare'}><li>skincare</li></Link>
+            <Link to={'/category/home-decoration'}><li>decoration</li></Link>
+            <Link to={'/category/furniture'}><li>furnitures</li></Link>
+            <Link to={'/category/blogs'}><li>blogs</li></Link>
           </ul>
         </nav>
       </div>
