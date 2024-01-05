@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { RxCross2 } from 'react-icons/rx'
-import { newContext } from '../../context/ResponsiveData'
+import { newContext } from '../../context/ContectProvider'
 import { Link } from 'react-router-dom'
 
 const MenuBar = () => {
@@ -11,6 +11,7 @@ const MenuBar = () => {
     <div className={`px-8 py-3 min-w-[30%] h-screen  fixed top-0 left-0 ${slideLeft} bg-white z-10 transition-all  md:hidden`}>
         <RxCross2 className='absolute left-[82%] text-red-500 top-6 text-xl cursor-pointer' onClick={()=>setMenuBar(false)}/>
         <ul className='uppercase mt-6'>
+            <Link to={'/all'}><li className='mt-8 cursor-pointer'>All</li></Link>
             <Link to={'/category/laptops'}><li className='mt-8 cursor-pointer'>Laptops</li></Link>
             <Link to={'/category/smartphones'}><li className='mt-8 cursor-pointer'>smartphones</li></Link>
             <Link to={'/category/lighting'}><li className='mt-8 cursor-pointer'>lighting</li></Link>

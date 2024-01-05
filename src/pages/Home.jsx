@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Topbar from '../Components/bar/Topbar'
 import Categories from '../Components/product/Categories';
 import SliderProduct from '../utils/SliderProduct';
-import { newContext } from '../context/ResponsiveData';
+import { newContext } from '../context/ContectProvider';
 import { bestDeals } from '../dummyData/best-deals';
 import { expertPick } from '../dummyData/expert-pick';
 

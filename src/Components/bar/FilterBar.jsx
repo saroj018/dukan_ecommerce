@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { newContext } from '../../context/ResponsiveData'
+import { newContext } from '../../context/ContectProvider'
 
 const FilterBar = () => {
     const{setCutCross}=useContext(newContext)

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { newContext } from '../context/ResponsiveData';
+import { newContext } from '../context/ContectProvider';
 
 const SliderProduct = ({children}) => {
     const responsiveValue = {
@@ -31,7 +31,7 @@ const SliderProduct = ({children}) => {
 
     return (
         <div>
-            <Carousel responsive={responsiveValue}  swipeable={true} draggable={true}>
+            <Carousel responsive={responsiveValue}  autoPlay={true}  infinite={true} swipeable={true} draggable={true}>
                 {children}
             </Carousel>;
         </div>

@@ -1,52 +1,82 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { BsTrash } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
+import ProductCard from './ProductCard'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeItem } from '../../redux/slicer/cartSlice'
+import { newContext } from '../../context/ContectProvider'
 
 const CartItem = ({ cartList }) => {
+
+    const dispatch = useDispatch()
+    const { setTotalPrice, cartQty, setCartQty } = useContext(newContext)
+
+
+
+    const addQty = (index) => {
+        let data = [...cartQty]
+        data[index - 1] += 1
+        setCartQty(data)
+    }
+    const lessQty = (index) => {
+        if (cartQty[index-1] > 1) {
+            let data = [...cartQty]
+            data[index - 1] -= 1
+            setCartQty(data)
+        }
+    }
+
+    useEffect(() => {
+        let totalPrice = 0
+        for (let i = 0; i < cartList.length; i++) {
+            totalPrice += cartList[i].itemPrice * cartQty[cartList[i].id-1]
+
+        }
+        setTotalPrice(totalPrice)
+        console.log(totalPrice);
+    }, [cartList, cartQty])
+
+
     return (
-        <>
-            <table className='min-w-[60vw] text-center ' >
-                <tr>
-                    <th className='min-w-[270px] border-2 border-red-500'>Item</th>
-                    <th>Qty</th>
-                    <th>Total</th>
-                    <th>Subtotal</th>
-                </tr>
-
-                <tbody>
-                    {
-                        cartList && cartList.map((ele, index) => {
-                            return (
-                               <>
-                                <tr key={index} className='border-2 border-red-500 sm:text-[15px] h-[100px] md:text-xl'>
-                                    <td className='flex items-center gap-10'>
-                                        <img className='h-[50px] rounded' src={ele.itemImage} alt="" />
-                                        <p className='text-[17px] min-w-[10%]'>{ele.itemTitle}</p>
-                                        <BsTrash />
-                                    </td>
-
-                                    <td>
-                                        <div className='flex justify-between items-center border-2 border-gray-500 px-2'>
-                                            <p>+</p>
-                                            <p>4</p>
-                                            <p>-</p>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p>{`Rs ${ele.itemPrice}`}</p>
-                                    </td>
-                                    <td>
-                                        <p>Rs 2000</p>
-                                    </td>
-                                </tr>
-                                <br />
-                               </>
-                            )
-                        })
-                    }
-                </tbody>
-            </table>
-
-        </>
+        <table className='border-collapse lg:w-[60vw] md:w-[100vw] text-center my-2'>
+            <tr className='border-b-2 border-gray-500'>
+                <th>Product</th>
+                <th>Rate</th>
+                <th>Qty</th>
+                <th>Acitivity</th>
+                <th>Total</th>
+            </tr>
+            <tbody>
+                {
+                    cartList.map((ele, index) => {
+                        return (
+                            <tr key={ele.id}  className='border-b-2 border-gray-500 my-5 ' >
+                                <Link to={`/productgallery/detail/${ele.id}`}>
+                                <td className='flex justify-center'>
+                                    <div className='flex items-center justify-center  flex-col'>
+                                        <img className='h-[80px] rounded-md' src={ele.itemImage} alt="" />
+                                        <p className='text-xl my-4'>{ele.itemTitle}</p>
+                                    </div>
+                                </td>
+                            </Link>
+                                <td>{ele.itemPrice}</td>
+                                <td >
+                                    <div className='grid grid-cols-3 gap-1 align-middle border border-gray-500 '>
+                                        <p onClick={() => addQty(ele.id)} className='cursor-pointer' >+</p>
+                                        <p >{cartQty[ele.id-1]}</p>
+                                        <p onClick={() => lessQty(ele.id)} className='cursor-pointer' >-</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button onClick={() => dispatch(removeItem(index))}>Delete</button>
+                                </td>
+                                <td>{ele.itemPrice * cartQty[ele.id-1]}</td>
+                            </tr>
+                        )
+                    })
+                }
+            </tbody>
+        </table>
     )
 }
 

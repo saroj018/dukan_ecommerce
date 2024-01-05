@@ -1,22 +1,28 @@
 import React from 'react'
 import ProductCard from '../Components/product/ProductCard'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const WishListPage = () => {
 
-    const imageLink = 'https://th.bing.com/th/id/R.5a8f53199ba46f9e5e03b9607bfcfef9?rik=XRKfSNKHGdc3XQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2flaptop-png-laptop-notebook-png-image-1358.png&ehk=mDICWHsP9Z2H9vGsbzdmOu9aZdShchqmCECt83MXorU%3d&risl=&pid=ImgRaw&r=0'
-    const productDescription = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, id.'
-    const productPrice = 'Rs 25000'
+  const wishListItem =useSelector((state)=>state.wishlistData.item)
+  // const filterWishListItem=wishListItem.filter((ele,index,arr)=>{
+  //   return arr.findIndex((element)=>element.id===ele.id)===index
+  // })
+// console.log(filterWishListItem);
   return (
     <>
-    <h1 className='text-center my-6 text-red-500 text-5xl'>WishList</h1>
+    <h1 className='text-center my-6 underline text-red-500 text-5xl'>WishList</h1>
     <div className='md:grid-cols-4 grid grid-cols-2'>
-        <ProductCard imageLink={imageLink} productDescription={productDescription} productPrice={productPrice} addToCart={'Add to Cart'}/>
-        <ProductCard imageLink={imageLink} productDescription={productDescription} productPrice={productPrice} addToCart={'Add to Cart'}/>
-        <ProductCard imageLink={imageLink} productDescription={productDescription} productPrice={productPrice} addToCart={'Add to Cart'}/>
-        <ProductCard imageLink={imageLink} productDescription={productDescription} productPrice={productPrice} addToCart={'Add to Cart'}/>
-        <ProductCard imageLink={imageLink} productDescription={productDescription} productPrice={productPrice} addToCart={'Add to Cart'}/>
-        <ProductCard imageLink={imageLink} productDescription={productDescription} productPrice={productPrice} addToCart={'Add to Cart'}/>
-        <ProductCard imageLink={imageLink} productDescription={productDescription} productPrice={productPrice} addToCart={'Add to Cart'}/>
+        {
+          wishListItem.length>0 ?
+          wishListItem?.map((ele,index)=>{
+            return(
+              <Link key={ele.id} to={`/productgallery/detail/${ele.id}`}><ProductCard key={index} imageLink={ele.itemImage} productTitle={ele.itemTitle} productDescription={ele.description} productPrice={ele.itemPrice} productId={index} showIcon={true}/></Link>
+        
+            )
+          }): <h1 className='text-4xl text-green-500 text-center  inline-block w-screen'>There is not any WishList Item</h1>
+        }
     </div>
     </>
   )

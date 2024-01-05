@@ -61,9 +61,9 @@ const Footer = () => {
 
 
                         <p className='uppercase font-semibold my-4 md:my-1'>subscribe for newsletter</p>
-                        <div className='flex mb-9 md:mt-2'>
-                            <input className='outline-none border-red-500 pl-2 border-2 h-12 w-[250px]' type="text" placeholder='enter your email' />
-                            <button className='bg-black text-white px-4'>SUBSCRIBE</button>
+                        <div className='flex  mb-9 md:mt-2'>
+                            <input className='outline-none border-red-500 pl-2 border-2 h-12 w-[230px]' type="text" placeholder='enter your email' />
+                            <button className='bg-black text-white px-2'>SUBSCRIBE</button>
                         </div>
 
 
@@ -73,7 +73,7 @@ const Footer = () => {
                 <div className='ml-5 md:flex md:justify-between md:px-3 md:mt-6'>
                     <div className='md:flex md:justify-center md:items-center md:flex-col'>
                         <p className='uppercase font-semibold '>We are Accepte</p>
-                        <div className='flex items-center gap-3 px-2 mb-10 cursor-pointer'>
+                        <div className='flex items-center justify-center gap-3 px-2 mb-10 cursor-pointer'>
                             <img className='h-[50px]' src="https://th.bing.com/th/id/OIP.VVtFlQALfXztHjSXHmNQFgHaDE?pid=ImgDet&rs=1" alt="" />
                             <img className='h-[50px]' src="https://www.cogenthealth.com.np/images/esewa.png" alt="" />
                             <img className='h-[50px]' src="https://ahummingway.com/wp-content/uploads/2020/07/1cdfa981ad7d37ac4a49d88380a8c6c8-600x426.png" alt="" />

@@ -1,52 +1,59 @@
-import React, { useEffect, useState } from 'react'
+
 import FilterBar from '../bar/FilterBar'
 import ProductCard from '../product/ProductCard'
 import FilterSection from '../filter/FilterSection'
 import { Link } from 'react-router-dom'
-import useFetch from '../../pages/hooks/useFetch'
 
-const ProductGallery = () => {
+const ProductGallery = ({data}) => {
 
-    const [apiData, setApiData] = useState([])
-
-
-    const fetchURL = `https://dummyjson.com/product`
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await useFetch(fetchURL)
-            setApiData(data.products)
-        }
-
-        fetchData()
-    }, [])
-
+console.log(data.length);
 
     return (
-        <div>
+        <div className='z-0'>
             <section className='md:hidden'>
                 <FilterBar />
                 <div className='grid grid-cols-2 md:grid-cols-3 md:px-9 md:py-3'>
-                    {
-                        apiData && apiData.map((ele, index) => {
-                            return (
-                                <Link key={index} to={`/productgallery/detail/${ele.id}`}><ProductCard imageLink={ele.thumbnail} productTitle={ele.productTitle} productDescription={ele.description} productPrice={`Rs ${ele.price}`} /></Link>
-                            )
-                        })
-                    }
+                    
+                      {
+                        data.map((ele, index) => (
+                          <Link key={index} to={`/productgallery/detail/${ele.id}`}>
+                            <ProductCard
+                              imageLink={ele.thumbnail}
+                              productTitle={ele.title}
+                              productDescription={ele.description}
+                              productPrice={ele.price}
+                            />
+                          </Link>
+                        ))
+                      
+                      }
+                      
+                    
                 </div>
             </section>
 
             <div className='hidden md:flex'>
-                <FilterSection />
+                {
+               Object.keys(data).length>0 && <FilterSection />
+                }
+                    
                 <div className='grid grid-cols-2 md:grid-cols-3 md:px-9 md:py-3'>
-                    {
-                        apiData && apiData.map((ele, index) => {
-                            return (
-                                <Link key={index} to={`/productgallery/detail/${ele.id}`}><ProductCard imageLink={ele.thumbnail} productDescription={ele.description} productPrice={ele.price} productTitle={ele.title} /></Link>
-                            )
-                        })
-                    }
+                    
+                         {data && data.length > 0 ? (
+                            data.map((ele, index) => (
+                              <Link key={index} to={`/productgallery/detail/${ele.id}`}>
+                                <ProductCard
+                                  imageLink={ele.thumbnail}
+                                  productTitle={ele.title}
+                                  productDescription={ele.description}
+                                  productPrice={ele.price}
+                                />
+                              </Link>
+                            ))
+                          ) : (
+                            <h1 className='text-green-500 text-4xl inline-block w-screen text-center'>Item Not Found</h1>
+                          )}
+                    
                 </div>
             </div>
         </div>
